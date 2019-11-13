@@ -2,6 +2,7 @@
   "name": "clientpanel",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://danis96.github.io/balancepanel",
   "dependencies": {
     "classnames": "^2.2.6",
     "firebase": "^7.3.0",
@@ -17,6 +18,7 @@
     "redux-firestore": "^0.10.0"
   },
   "scripts": {
+    "deploy": "npm run build&&gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
