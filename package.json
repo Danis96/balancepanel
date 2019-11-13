@@ -6,6 +6,7 @@
   "dependencies": {
     "classnames": "^2.2.6",
     "firebase": "^7.3.0",
+    "gh-pages": "^2.1.1",
     "prop-types": "^15.7.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
