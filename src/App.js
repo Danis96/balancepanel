@@ -27,7 +27,7 @@ function App() {
               <Route exact path='/client/edit/:id' component={UserIsAuthenticated(EditClients)} />
               <Route exact path='/settings' component={UserIsAuthenticated(Settings)} />
               <Route exact path='/login' component={UserIsNotAuthenticated(Login)} />
-              <Route exact path='/register' component={UserIsNotAuthenticated(Register)} />
+              <Route exact path='/register' component={Register} />
             </Switch>
           </div>
         </div>

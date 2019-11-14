@@ -25,15 +25,15 @@ class AppNavbar extends Component {
     onLogoutClick = e => {
         e.preventDefault();
 
-        const {firebase} = this.props;
+        const { firebase } = this.props;
 
         firebase.logout();
     }
 
     render() {
-        const {isAuthenticated} = this.state;
-        const {auth} = this.props;
-        const {allowRegistration} = this.props.settings;
+        const { isAuthenticated } = this.state;
+        const { auth } = this.props;
+        const { allowRegistration } = this.props.settings;
         return (
             <nav className='navbar navbar-expand-md navbar-dark bg-primary mb-4'>
                 <div className='container'>
@@ -49,50 +49,52 @@ class AppNavbar extends Component {
                                 isAuthenticated ? (
                                     <li className='nav-item'>
                                         <Link to='/' className='nav-link'>
-                                           Dashboard
+                                            Dashboard
                                         </Link>
                                     </li>
                                 ) : null
                             }
 
                         </ul>
+                        <ul className='navbar-nav mr-auto'>
+                            <li className='nav-item'>
+                                <Link to='/register' className='nav-link'>
+                                    Register
+                                        </Link>
+                            </li>
+                        </ul>
                         {
                             isAuthenticated ? (
-                                    <ul className='navbar-nav mr-auto'>
-                                       <li className='nav-item'>
-                                           <a href='#!' className='nav-link'>
-                                               {auth.email}
-                                           </a>
-                                       </li>
-                                       <li className='nav-item'>
-                                           <Link to='/settings' className='nav-link'>
-                                               Settings
+                                <ul className='navbar-nav mr-auto'>
+                                    <li className='nav-item'>
+                                        <a href='#!' className='nav-link'>
+                                            {auth.email}
+                                        </a>
+                                    </li>
+                                    <li className='nav-item'>
+                                        <Link to='/settings' className='nav-link'>
+                                            Settings
                                            </Link>
-                                       </li>
-                                       <li className='nav-item'>
-                                           <a href='#!' className='nav-link' onClick={this.onLogoutClick}>
-                                               Logout
+                                    </li>
+                                    <li className='nav-item'>
+                                        <a href='#!' className='nav-link' onClick={this.onLogoutClick}>
+                                            Logout
                                            </a>
-                                       </li>
-                                    </ul>
+                                    </li>
+                                </ul>
                             ) : null
                         }
                         {
                             allowRegistration && !isAuthenticated ? (
                                 <ul className='navbar-nav ml-auto'>
-                                   <li className='nav-item'>
-                                      <Link to='/login' className='nav-link'>
-                                          Login
+                                    <li className='nav-item'>
+                                        <Link to='/login' className='nav-link'>
+                                            Login
                                       </Link>
-                                   </li>
-                                   <li className='nav-item'>
-                                      <Link to='/register' className='nav-link'>
-                                          Register
-                                      </Link>
-                                   </li>
+                                    </li>
                                 </ul>
                             ) : null
-                        } 
+                        }
                     </div>
 
                 </div>
